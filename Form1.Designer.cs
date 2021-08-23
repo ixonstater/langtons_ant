@@ -188,6 +188,7 @@ namespace LangtonsAnt
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(224, 9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(430, 430);
