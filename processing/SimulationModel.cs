@@ -44,6 +44,73 @@
                 }
             }
         }
+
+        public void RotateClockwise()
+        {
+            switch (this.Dir)
+            {
+                case Direction.up:
+                    this.Dir = Direction.right;
+                    break;
+                case Direction.right:
+                    this.Dir = Direction.down;
+                    break;
+                case Direction.down:
+                    this.Dir = Direction.left;
+                    break;
+                case Direction.left:
+                    this.Dir = Direction.up;
+                    break;
+            }
+        }
+
+        public void RotateCounterClockwise()
+        {
+            switch (this.Dir)
+            {
+                case Direction.up:
+                    this.Dir = Direction.left;
+                    break;
+                case Direction.left:
+                    this.Dir = Direction.down;
+                    break;
+                case Direction.down:
+                    this.Dir = Direction.right;
+                    break;
+                case Direction.right:
+                    this.Dir = Direction.up;
+                    break;
+            }
+        }
+
+        public void AdvanceAnt()
+        {
+            switch (this.Dir)
+            {
+                case Direction.up:
+                    this.YPos++;
+                    break;
+                case Direction.down:
+                    this.YPos--;
+                    break;
+                case Direction.left:
+                    this.XPos--;
+                    break;
+                case Direction.right:
+                    this.XPos++;
+                    break;
+            }
+        }
+
+        public void SetSquareBlack(int x, int y)
+        {
+            this.Playground[x][y] = Color.black;
+        }
+
+        public void SetSquareWhite(int x, int y)
+        {
+            this.Playground[x][y] = Color.white;
+        }
     }
 }
 
