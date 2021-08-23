@@ -55,6 +55,7 @@ namespace LangtonsAnt
             this.button1.TabIndex = 30;
             this.button1.Text = "New Simulation";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox6
             // 
@@ -189,14 +190,14 @@ namespace LangtonsAnt
             // 
             this.panel1.Location = new System.Drawing.Point(224, 9);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(450, 429);
+            this.panel1.Size = new System.Drawing.Size(430, 430);
             this.panel1.TabIndex = 31;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 447);
+            this.ClientSize = new System.Drawing.Size(662, 447);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox6);

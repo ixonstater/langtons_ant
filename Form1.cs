@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace LangtonsAnt
@@ -15,6 +8,19 @@ namespace LangtonsAnt
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Graphics g = panel1.CreateGraphics();
+            Pen p = new Pen(Color.Black);
+            SolidBrush sb = new SolidBrush(Color.Red);
+            g.DrawEllipse(p, 50, 50, 100, 100);
+            g.FillEllipse(sb, 50, 50, 100, 100);
+            SolidBrush sb2 = new SolidBrush(Color.Blue);
+            g.DrawRectangle(p, 50, 50, 100, 100);
+            g.FillRectangle(sb2, 50, 50, 100, 100);
+
         }
     }
 }
