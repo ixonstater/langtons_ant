@@ -1,4 +1,6 @@
-﻿namespace LangtonsAnt
+﻿using System.Windows.Forms;
+
+namespace LangtonsAnt
 {
     public class Simulation
     {
@@ -26,16 +28,24 @@
         {
             while (this.runSim)
             {
-                await Task.Delay(1000 / this.StepsPerSecond);
-                this.CalculateStep();
-                this.TermsCalculated++;
-                if (this.StepLimit < 0)
+                try
                 {
-                    continue;
+                    await Task.Delay(1000 / this.StepsPerSecond);
+                    this.CalculateStep();
+                    this.TermsCalculated++;
+                    if (this.StepLimit < 0)
+                    {
+                        continue;
+                    }
+                    if (this.TermsCalculated > this.StepLimit)
+                    {
+                        this.StopSimulation();
+                    }
                 }
-                if (this.TermsCalculated > this.StepLimit)
+                catch
                 {
-                    this.runSim = false;
+                    this.StopSimulation();
+                    MessageBox.Show("Ant has left the screen.", "Range Error");
                 }
             }
         }
